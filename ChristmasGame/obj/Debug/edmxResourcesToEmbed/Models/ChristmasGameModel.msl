@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChristmasGameModelStoreContainer" CdmEntityContainer="ChristmasGameEntities">
+    <EntitySetMapping Name="CurrentVersions">
+      <EntityTypeMapping TypeName="ChristmasGameModel.CurrentVersion">
+        <MappingFragment StoreEntitySet="CurrentVersion">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phrases">
+      <EntityTypeMapping TypeName="ChristmasGameModel.Phras">
+        <MappingFragment StoreEntitySet="Phrases">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Given" ColumnName="Given" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
