@@ -150,6 +150,9 @@
     <Compile Include="Models\CurrentVersion.cs">
       <DependentUpon>ChristmasGameContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Link.cs">
+      <DependentUpon>ChristmasGameContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Phras.cs">
       <DependentUpon>ChristmasGameContext.tt</DependentUpon>
     </Compile>

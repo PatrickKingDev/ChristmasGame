@@ -28,6 +28,7 @@ namespace ChristmasGame.Controllers
             }
 
             vm.Phrase = phrase;
+            vm.Link = getLink();
 
             return View(vm);
         }
@@ -57,6 +58,20 @@ namespace ChristmasGame.Controllers
             }
 
             return string.Empty;
+        }
+
+        private string getLink() {
+            var currentLink = repo.GetLink();
+
+            if (string.IsNullOrWhiteSpace(currentLink)) {
+                currentLink = "https://cosel.io/";
+            }
+
+            if (!currentLink.StartsWith("http")) {
+                currentLink = "http://" + currentLink;
+            }
+
+            return currentLink;
         }
     }
 }
