@@ -10,7 +10,18 @@
     <link rel="stylesheet" href="~/ressources/styles/main.css">
 </head>
 <body>
-    @RenderBody()
+    <main>
+        <header>
+            <img class="floating-bg" src="~/ressources/images/top.png" aria-hidden="true" />
+        </header>
+        <div class="content">
+            <h1>Joyeux Noel !</h1>
+            @RenderBody()
+        </div>
+        <footer>
+            <img class="floating-bg" src="~/ressources/images/bottom.png" aria-hidden="true" />
+        </footer>
+    </main>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

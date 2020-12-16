@@ -11,6 +11,9 @@ html, body {
     font-family: 'robotoregular', Arial, Helvetica, sans-serif;
     color: #261717;
 }
+a {
+    text-decoration: underline;
+}
 
 /* Layout */
 main {
@@ -31,8 +34,12 @@ header, footer {
     flex-shrink: 0;
 }
 .section {
-    margin: 2.5rem 0 5rem;
+    margin: 3rem 0 4rem;
 }
+    .section:last-child {
+        margin-bottom: 0;
+    }
+
 .floating-bg {
     max-width: 100%;
     max-height: 19rem;
@@ -73,6 +80,10 @@ h1 {
         background-color: white
     }
 
+.cosel {
+    max-width: 200px;
+}
+
 .cute-list {
     list-style: none;
     counter-reset: list-counter;
@@ -100,8 +111,51 @@ h1 {
             font-size: 1.7rem;
         }
 
+/* Status */
+.is-mobile-only { 
+    display: block;
+}
+.is-desktop-only {
+    display: none;
+}
 
-@media (min-width: 60rem) {
+@media (min-width: 480px) {
+    .section {
+        margin: 4rem 0 6rem;
+    }
+
+    /* Module */
+
+    /*   Text */
+    h1 {
+        font-size: 6rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sentence {
+        font-size: 3rem;
+    }
+
+    .cute-list {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Status */
+    .is-mobile-only {
+        display: none;
+    }
+
+    .is-desktop-only {
+        display: block;
+    }
+}
+
+@media (min-width: 762px) {
     /* Layout */
     main {
         margin: 0;
@@ -115,7 +169,6 @@ h1 {
     /*   Text */
     h1 {
         font-size: 8rem;
-        margin-top: 2rem;
     }
     .subtitle {
         font-size: 1.8rem;
@@ -130,5 +183,14 @@ h1 {
     }
     .cute-list li::before {
         font-size: 2.5rem;
+    }
+
+    /* Status */
+    .is-mobile-only {
+        display: none;
+    }
+
+    .is-desktop-only {
+        display: block;
     }
 }

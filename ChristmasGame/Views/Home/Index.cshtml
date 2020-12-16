@@ -4,50 +4,36 @@
     ViewBag.Title = "Home Page";
 }
 
-<main>
-    <header>
-        <img class="floating-bg" src="~/ressources/images/top.png" aria-hidden="true" />
-    </header>
-    <div class="content">
-        <h1>Joyeux Noel !</h1>
-
-        @if (Model.Phrase == "")
-        {
-            <div class="section">
-                <p class="sentence">Oops!</p>
-                <p class="sentence">Il n'y a plus de phrases disponible!</p>
-            </div>
-        }
-        else
-        {
-            <div class="section">
-                <p class="subtitle">Voici ta phrase :</p>
-                <p class="sentence">"Ça coute un bras"</p>
-                <!-- @Model.Phrase -->
-            </div>
-
-
-
-            <div class="section">
-                <p class="subtitle">Instructions :</p>
-                <ol class="cute-list">
-                    <li>Aller sur le site <a href="@Model.Link">Cosel.io</a></li>
-                    <li>Inscrire ta phrase dans le champs de saisi (Anythings)</li>
-                    <li>
-                        <span class="li-text">Cliquer sur Submit</span>
-                        <img class="paper" src="~/ressources/images/cosel.png" alt="Accueil du site web Cosel" />
-                    </li>
-                </ol>
-
-            </div>
-
-            <div class="section">
-                <p class="subtitle">Exemple du jeu :</p>
-                <img class="paper withpadding" src="~/ressources/images/example.jpg" alt="Jeu Téléstration" />
-            </div>
-        }
+@if (Model.Phrase == "")
+{
+    <div class="section">
+        <p class="sentence">Oops!</p>
+        <p class="sentence">Il n'y a plus de phrases disponible!</p>
     </div>
-    <footer>
-        <img class="floating-bg" src="~/ressources/images/bottom.png" aria-hidden="true" />
-    </footer>
-</main>
+}
+else
+{
+    <div class="section">
+        <p class="subtitle">Voici ta phrase :</p>
+        <p class="sentence">"Ça coute un bras"</p>
+        <!-- @Model.Phrase -->
+    </div>
+
+    <div class="section">
+        <p class="subtitle">Instructions :</p>
+        <ol class="cute-list">
+            <li>Aller sur le site <a href="@Model.Link">Cosel.io</a></li>
+            <li>Inscrire ta phrase dans le champs de saisi (Anythings)</li>
+            <li>
+                <span class="li-text">Cliquer sur Submit</span>
+                <img class="paper is-desktop-only" src="~/ressources/images/cosel.png" alt="Accueil du site web Cosel" />
+                <img class="paper cosel is-mobile-only" src="~/ressources/images/coselmobile.jpg" alt="Accueil du site web Cosel Mobile" />
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <p class="subtitle">Exemple du jeu :</p>
+        <img class="paper withpadding" src="~/ressources/images/example.jpg" alt="Jeu Téléstration" />
+    </div>
+}
