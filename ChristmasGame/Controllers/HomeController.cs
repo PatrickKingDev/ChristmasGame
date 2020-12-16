@@ -28,6 +28,7 @@ namespace ChristmasGame.Controllers
             }
 
             vm.Phrase = phrase;
+            vm.Link = getLink();
 
             return View(vm);
         }
@@ -36,7 +37,7 @@ namespace ChristmasGame.Controllers
             var currentVersion = repo.GetCurrentVersion();
 
             HttpCookie currentCookie = new HttpCookie("CurrentPhrase");
-            currentCookie.Value = currentVersion + "|=|" + phrase;
+            currentCookie.Value = Server.UrlEncode(currentVersion + "|=|" + phrase);
 
             Response.Cookies.Add(currentCookie);
         }
@@ -44,7 +45,7 @@ namespace ChristmasGame.Controllers
         private string readCookie() {
             var currentVersion = repo.GetCurrentVersion();
 
-            var currentValue = Request.Cookies["CurrentPhrase"]?.Value;
+            var currentValue = Server.UrlDecode(Request.Cookies["CurrentPhrase"]?.Value);
 
             if (currentValue == null) { 
                 return string.Empty;
@@ -57,6 +58,20 @@ namespace ChristmasGame.Controllers
             }
 
             return string.Empty;
+        }
+
+        private string getLink() {
+            var currentLink = repo.GetLink();
+
+            if (string.IsNullOrWhiteSpace(currentLink)) {
+                currentLink = "https://cosel.io/";
+            }
+
+            if (!currentLink.StartsWith("http")) {
+                currentLink = "http://" + currentLink;
+            }
+
+            return currentLink;
         }
     }
 }

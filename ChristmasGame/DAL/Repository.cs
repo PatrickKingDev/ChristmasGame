@@ -42,5 +42,14 @@ namespace ChristmasGame.DAL
         public int GetCurrentVersion() {
             return db.CurrentVersions.OrderByDescending(v => v.Version).First().Version;
         }
+
+        public string GetLink() {
+            return db.Links.OrderByDescending(l => l.ID).First().Link1;
+        }
+
+        public void AddLink(string lk) {
+            db.Links.OrderByDescending(l => l.ID).First().Link1 = lk;
+            db.SaveChanges();
+        }
     }
 }

@@ -7,6 +7,7 @@
       <Diagram DiagramId="854dee6e750a438fa6f1b7cb62f35e90" Name="Diagram1">
         <EntityTypeShape EntityType="ChristmasGameModel.CurrentVersion" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ChristmasGameModel.Phras" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChristmasGameModel.Link" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

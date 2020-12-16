@@ -16,6 +16,14 @@ namespace ChristmasGame.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Index(string link)
+        {
+            repo.AddLink(link);
+
+            return View();
+        }
+
         public ActionResult NewGame() {
             repo.AddVersion();
 

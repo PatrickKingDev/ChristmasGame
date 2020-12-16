@@ -27,5 +27,6 @@ namespace ChristmasGame.Models
     
         public virtual DbSet<CurrentVersion> CurrentVersions { get; set; }
         public virtual DbSet<Phras> Phrases { get; set; }
+        public virtual DbSet<Link> Links { get; set; }
     }
 }
