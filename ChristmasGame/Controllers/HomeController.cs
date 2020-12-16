@@ -37,7 +37,7 @@ namespace ChristmasGame.Controllers
             var currentVersion = repo.GetCurrentVersion();
 
             HttpCookie currentCookie = new HttpCookie("CurrentPhrase");
-            currentCookie.Value = currentVersion + "|=|" + phrase;
+            currentCookie.Value = Server.UrlEncode(currentVersion + "|=|" + phrase);
 
             Response.Cookies.Add(currentCookie);
         }
@@ -45,7 +45,7 @@ namespace ChristmasGame.Controllers
         private string readCookie() {
             var currentVersion = repo.GetCurrentVersion();
 
-            var currentValue = Request.Cookies["CurrentPhrase"]?.Value;
+            var currentValue = Server.UrlDecode(Request.Cookies["CurrentPhrase"]?.Value);
 
             if (currentValue == null) { 
                 return string.Empty;
