@@ -5,18 +5,24 @@
 
 <br />
 <br />
-@Html.ActionLink("New Game", "NewGame")
-<br />
-<br />
-<br />
-@Html.ActionLink("Reset Game", "ResetGame")
-<br />
-<br />
-<br />
 <form method="POST">
     <label for="link">Url de la nouvelle partie</label>
     <br />
     <input type="text" name="link" />
     <input type="submit" />
 </form>
+<br />
+<br />
+@Html.ActionLink("Nouvelle partie", "NewGame")
+<br />
+<span>Donner un nouveau mot à tout le monde</span>
+<br />
+<br />
+<br />
+@Html.ActionLink("Réinitialiser les phrases", "ResetGame")
+<br />
+<span>Un mot sera distribué par personne pour chaque partie.</span>
+<br />
+<span>Éventuellement il n'aura plus de phrase disponible, il faudrat réinitialiser les phrases</span>
+
 
