@@ -100,14 +100,14 @@ h1 {
         counter-increment: list-counter;
         position: relative;
         margin-bottom: 1rem;
-        margin-left: 1.5rem;
+        margin-left: 1.7rem;
         font-size: 1.5rem;
     }
         .cute-list li::before {
             content: counter(list-counter) ".";
             color: #DF9393;
             position: absolute;
-            left: -15px;
+            left: -17px;
             text-align: right;
             font-weight: bold;
         }

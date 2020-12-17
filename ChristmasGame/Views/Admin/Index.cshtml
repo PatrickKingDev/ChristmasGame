@@ -3,14 +3,20 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Admin Panel</h2>
-
+<br />
+<br />
 @Html.ActionLink("New Game", "NewGame")
+<br />
+<br />
+<br />
 @Html.ActionLink("Reset Game", "ResetGame")
-
+<br />
+<br />
+<br />
 <form method="POST">
-    <label for="link">Your link name</label>
-    <input type="text" name="link" placeholder="Your link goes here" />
+    <label for="link">Url de la nouvelle partie</label>
+    <br />
+    <input type="text" name="link" />
     <input type="submit" />
 </form>
 
