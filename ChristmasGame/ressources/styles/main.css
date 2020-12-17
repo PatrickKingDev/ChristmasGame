@@ -4,7 +4,6 @@
 html, body {
     width: 100%;
     height: 100%;
-
     margin: 0;
     padding: 0;
     background-color: #F5F3EC;
@@ -21,7 +20,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    margin: 0 2rem;
+    background-repeat: no-repeat;
+    background-image: url(/ressources/images/bottom.png), url(/ressources/images/top.png);
+    background-size: 85%;
+    background-position: center bottom, center top;
 }
 header, footer {
     flex-shrink: 0;
@@ -29,7 +31,8 @@ header, footer {
 }
 .content {
     max-width: 65rem;
-    margin: 0 auto;
+    padding: 18vw 2rem;
+    margin: auto;
     flex-grow: 1;
     flex-shrink: 0;
 }
@@ -101,14 +104,12 @@ h1 {
         font-size: 1.5rem;
     }
         .cute-list li::before {
-            content: counter(list-counter);
-            font-family: 'alexbrushregular', 'Times New Roman', Times, serif;
+            content: counter(list-counter) ".";
             color: #DF9393;
             position: absolute;
-            right: 102%;
+            left: -15px;
             text-align: right;
             font-weight: bold;
-            font-size: 1.7rem;
         }
 
 /* Status */
@@ -120,8 +121,16 @@ h1 {
 }
 
 @media (min-width: 480px) {
+    /* Layout */
+    main {
+        background-size: 475px;
+    }
     .section {
         margin: 4rem 0 6rem;
+    }
+    .content {
+        padding-top: 100px;
+        padding-bottom: 140px;
     }
 
     /* Module */
@@ -158,10 +167,14 @@ h1 {
 @media (min-width: 762px) {
     /* Layout */
     main {
-        margin: 0;
+        background-size: 700px;
     }
     .section {
         margin: 5rem 0 10rem;
+    }
+    .content {
+        padding-top: 130px;
+        padding-bottom: 190px;
     }
 
     /* Module */
@@ -181,9 +194,6 @@ h1 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-    .cute-list li::before {
-        font-size: 2.5rem;
-    }
 
     /* Status */
     .is-mobile-only {
@@ -192,5 +202,26 @@ h1 {
 
     .is-desktop-only {
         display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Layout */
+    main {
+        margin: 0;
+        background-repeat: no-repeat;
+        background-image: url(/ressources/images/right.png), url(/ressources/images/bottom.png), url(/ressources/images/left.png), url(/ressources/images/top.png);
+        background-size: 23vw, 700px;
+        background-position: right 60%, center bottom, left 15%, center top;
+    }
+}
+@media (min-width: 1550px) {
+    /* Layout */
+    main {
+        background-size: 400px, 800px;
+    }
+    .content {
+        padding-top: 150px;
+        padding-bottom: 230px;
     }
 }
